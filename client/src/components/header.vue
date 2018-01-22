@@ -1,5 +1,6 @@
 <template>
     <header>
+        <el-button type="primary">主要按钮</el-button>
         <a href="/"></a>
         <ul class="nav">
             <li v-for="item in list">{{item.name}}</li>
