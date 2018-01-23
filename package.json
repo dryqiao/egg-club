@@ -59,8 +59,14 @@
     "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=8.9.0",
+    "npm": ">= 3.0.0"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
   "scripts": {
     "dev-client": "webpack-dev-server --inline --progress --config client/build/webpack.dev.conf.js",
     "build-client": "node client/build/build.js",
