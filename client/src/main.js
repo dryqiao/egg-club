@@ -7,12 +7,12 @@ import {
     Button,
     Menu,
     MenuItem,
-    MenuItemGroup
+    MenuItemGroup,
+    Pagination
 } from 'element-ui'
 Vue.config.productionTip = false
-let arr = [Button, Menu, MenuItem, MenuItemGroup]
+let arr = [Button, Menu, MenuItem, MenuItemGroup, Pagination]
 arr.forEach(item => {
-
     Vue.component(item.name, item)
 })
 /* eslint-disable no-new */

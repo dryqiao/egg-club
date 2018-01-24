@@ -4,7 +4,7 @@
             <img src="../assets/img/logo.svg" alt="#">
         </a>
         <ul class="nav">
-            <li v-for="item in list">{{item.name}}</li>
+            <li v-for="(item,index) in list" @click='liClickHandler(index)' :key="index">{{item.name}}</li>
         </ul>
     </header>    
 </template>
@@ -16,7 +16,18 @@
                     name: '关于',
                 },{
                     name: '设置',
+                },{
+                    name: '登录',
                 }]
+            }
+        },
+        methods:{
+            liClickHandler(index) {
+                console.log(index)
+                switch(index) {
+                    case 0: this.$router.push('/about') 
+                            break
+                }
             }
         }
     }
@@ -25,6 +36,7 @@
 header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 5px 60px 5px 60px;
     background: #444;
     color: #ccc;
@@ -36,6 +48,7 @@ header {
     }
     .nav {
         display: flex;
+        flex-wrap: wrap;
         line-height: 40px;
         li {
             margin-left: 10px;

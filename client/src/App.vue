@@ -8,16 +8,21 @@
             </div>
             <div class="sidebar"></div>
         </div>
-        <footer></footer>
+        <v-footer></v-footer>
+        <top></top>
     </div>
 </template>
 
 <script>
     import header from './components/header'
+    import footer from './components/footer'
+    import top from './components/backtotop'
     export default {
         name: 'App',
         components: {
-            'v-header': header
+            'v-header': header,
+            'v-footer': footer,
+            top
         }
     }
 
@@ -36,23 +41,19 @@
 
     .main {
         display: flex;
-        // justify-content: space-between;
         flex: 1;
         width: 90%;
-        height: 1000px;
         margin: 15px auto;
         max-width: 1400px;
         
         .content {
             min-height: 400px;
-            // width: 65%;
             flex: 1;
             margin-right: 40px;
             background-color: #ffffff;
         }
         .sidebar {
             min-height: 400px;
-            // width: 250px;
             flex: 0 0 250px;
             background-color: #ffffff;
         }
