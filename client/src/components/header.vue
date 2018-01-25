@@ -6,7 +6,7 @@
         <ul class="nav">
             <li v-for="(item,index) in list" @click='liClickHandler(index)' :key="index">{{item.name}}</li>
         </ul>
-    </header>    
+    </header>
 </template>
 <script>
     export default {
