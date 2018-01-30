@@ -13,7 +13,14 @@ module.exports = appInfo => {
     url: 'mongodb://127.0.0.1:27017/club',
     options: {}
   };
-  
+  config.security = {
+    domainWhiteList: [ 'http://localhost:8011'],
+    csrf: {
+      enable: false,
+      ignoreJSON:true,
+      // headerName: 'x-csrf-token', // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
+    },
+  };
   return config;
 };
 

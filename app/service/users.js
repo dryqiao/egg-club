@@ -1,7 +1,7 @@
 const Service = require('egg').Service
 
 class UserService extends Service {
-    create = async req =>{
+    async create(req) {
         console.log(req)
         let arr = await this.ctx.model.Users.find({username: req.username})
         let result = {}

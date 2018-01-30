@@ -8,10 +8,16 @@ import {
     Menu,
     MenuItem,
     MenuItemGroup,
-    Pagination
+    Pagination,
+    Dialog,
+    Form,
+    FormItem,
+    Input,
 } from 'element-ui'
 Vue.config.productionTip = false
-let arr = [Button, Menu, MenuItem, MenuItemGroup, Pagination]
+let arr = [Button, Menu, MenuItem, MenuItemGroup, Pagination,Dialog,Input,
+    Form,
+    FormItem,]
 arr.forEach(item => {
     Vue.component(item.name, item)
 })
