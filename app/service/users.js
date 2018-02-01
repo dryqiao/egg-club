@@ -1,16 +1,30 @@
 const Service = require('egg').Service
 
 class UserService extends Service {
-    async create(req) {
+    async index(req) {
         console.log(req)
-        let arr = await this.ctx.model.Users.find({username: req.username})
-        let result = {}
-        if(arr.length === 0) {
-            result = await this.ctx.model.Users.create(req)
-        }else {
-            result = '用户名已存在！'
+        let users = await this.ctx.model.Users.find(req)
+        return {
+            c: 1,
+            data: users.map(user => user.username)
         }
-        return result
+    }
+    async create(req) {
+        let arr = await this.ctx.model.Users.find({
+            username: req.username
+        })
+        if (arr.length === 0) {
+            let result = await this.ctx.model.Users.create(req)
+            return {
+                c: 1,
+                data: '注册成功'
+            }
+        } else {
+            return {
+                c: 0,
+                data: '用户名已存在'
+            }
+        }
     }
 }
 module.exports = UserService
