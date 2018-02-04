@@ -3,9 +3,13 @@ module.exports = app => {
     const UserSchema = new mongoose.Schema({
         username : {
             type: String,
-            unique: true
+            unique: true,
+            require: true
         },
-        password : {type: String}
+        password : {
+            type: String,
+            require: true
+        }
     })
     return mongoose.model('Users',UserSchema)
 }

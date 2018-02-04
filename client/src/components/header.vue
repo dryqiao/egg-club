@@ -58,6 +58,7 @@ export default {
     },
     signIn() {
       //登录
+      api.signIn(this.logData)
     },
     signUp() {
       //注册

@@ -5,6 +5,7 @@
  */
 module.exports = app => {
   const { router, controller } = app
-  router.get('/', controller.home.index)
+  router.resources('index', '/api/index',controller.home)
   router.resources('users','/api/users',controller.users)
+  router.resources('session','/api/session',controller.session)
 };

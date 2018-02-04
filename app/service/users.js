@@ -2,12 +2,17 @@ const Service = require('egg').Service
 
 class UserService extends Service {
     async index(req) {
-        console.log(req)
         let users = await this.ctx.model.Users.find(req)
         return {
             c: 1,
             data: users.map(user => user.username)
         }
+    }
+    async show(req) {
+        let data = await this.ctx.model.Users.find({
+            username: req.username
+        })
+        return data[0].password
     }
     async create(req) {
         let arr = await this.ctx.model.Users.find({
