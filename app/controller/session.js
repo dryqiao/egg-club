@@ -1,15 +1,15 @@
 'use strict';
 
-const Controller = require('egg').Controller
+const Controller = require('./base')
 
 class SessionController extends Controller {
     async index() {
         this.ctx.body = 'hi, egg';
-      }
-  async create() {
-      let result = await this.ctx.service.session.create(this.ctx.request.body)
-      this.ctx.body = result
-      this.ctx.status = 200
+    }
+    async create() {
+        const {ctx , service} = this
+        let result = await service.session.create(ctx.request.body)
+        result === 1 ? this.success() :this.fail('fail')
     }
 }
 

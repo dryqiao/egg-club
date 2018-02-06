@@ -9,6 +9,9 @@ module.exports = app => {
         password : {
             type: String,
             require: true
+        },
+        token: {
+            type: String
         }
     })
     return mongoose.model('Users',UserSchema)
