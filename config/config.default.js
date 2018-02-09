@@ -18,14 +18,15 @@ module.exports = appInfo => {
     csrf: {
       enable: false,
       ignoreJSON:true,
-      // headerName: 'x-csrf-token', // 通过 header 传递 CSRF token 的默认字段为 x-csrf-token
     },
   };
+  config.redis = {
+    client: {
+      port: 6379,          // Redis port 
+      host: '127.0.0.1',   // Redis host 
+      password: 'auth',
+      db: 0,
+    },
+  }
   return config;
 };
-
-
-// exports.mongoose = {
-//   url: 'mongodb://127.0.0.1:27017/club',
-//   options: {}
-// };

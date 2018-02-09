@@ -9,8 +9,9 @@ class SessionController extends Controller {
     async create() {
         const {ctx , service} = this
         let result = await service.session.create(ctx.request.body)
-        result === 1 ? this.success() :this.fail('fail')
+        result === 0 ? this.fail('fail') :this.success(result)
     }
 }
 
 module.exports = SessionController
+ 

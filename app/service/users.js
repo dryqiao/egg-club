@@ -11,7 +11,6 @@ class UserService extends Service {
         let data = await this.ctx.model.Users.findOne({
             username: req.username
         })
-        console.log('find password',data)
         return data.password
     }
     
@@ -42,9 +41,7 @@ class UserService extends Service {
     async compare(passw,hash) {
         //比较密码
         return new Promise((resolve,reject) => {
-            console.log(passw,hash)
             bcrypt.compare(passw,hash).then(res => {
-                console.log(res)
                 resolve(res)
             }).catch(err=>reject(res))
         })
