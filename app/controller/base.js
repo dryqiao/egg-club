@@ -13,7 +13,7 @@ class BaseController extends Controller {
     fail(data) {
         this.ctx.body = {
             c: 0,
-            data: data
+            data: data || {}
         }
     }
 }

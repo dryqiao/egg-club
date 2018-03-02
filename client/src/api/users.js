@@ -1,10 +1,10 @@
-import {postData} from './basic'
+import {postData, deleteData} from './basic'
 
 export default {
     signUp(params) {
         return postData('/users',params)
     },
-    signIn(params) {
-        return postData('/session',params)
+    signOut(params) {
+        return deleteData('/users' + params)
     }
 }
