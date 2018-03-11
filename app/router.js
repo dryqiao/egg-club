@@ -8,4 +8,5 @@ module.exports = app => {
   router.resources('index', '/api/index',controller.home)
   router.resources('users','/api/users',controller.users)
   router.resources('session','/api/session',controller.session)
+  router.resources('posts','/api/posts',controller.posts)
 };

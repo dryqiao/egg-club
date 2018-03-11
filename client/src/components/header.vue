@@ -4,6 +4,7 @@
             <img src="../assets/img/logo.svg" alt="#">
         </a>
         <el-menu mode="horizontal" background-color="#545c64" text-color="#fff" class="nav-list">
+            <el-menu-item index="0" @click="createTopic">发帖</el-menu-item>
             <el-menu-item index="1" @click="aboutClick">关于</el-menu-item>
             <el-menu-item index="2" @click="setClick">设置</el-menu-item>
             <el-menu-item v-if="!username" index="3" @click="logInClick">登录</el-menu-item>
@@ -64,22 +65,15 @@
             };
         },
         methods: {
-            liClickHandler(index) {
-                switch (index) {
-                    case 0:
-                        this.$router.push("/about");
-                        break;
-                    case 2:
-                        this.dialogFormVisible = true;
-                        break;
-                }
+            createTopic() {
+                this.$router.push("/write")
             },
             aboutClick() {
-                this.$router.push("/about");
+                this.$router.push("/about")
             },
             setClick() {},
             logInClick() {
-                this.dialogFormVisible = true;
+                this.dialogFormVisible = true
             },
             logIn() {
                 //登录

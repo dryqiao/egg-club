@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import topic from '../components/topic'
 import about from '../components/about'
 import user from '../components/user'
+import write from '../components/write'
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +22,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: user
+    },
+    {
+      path: '/write',
+      name: 'write',
+      component: write
     }
   ]
 })

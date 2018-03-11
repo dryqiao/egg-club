@@ -11,7 +11,6 @@ module.exports = app => {
         },
         author: {
             type: String,
-            unique: true
         },
         visit_count: {
             type: Number,

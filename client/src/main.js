@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueCookies from 'vue-cookies'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+// use
+Vue.use(mavonEditor)
 import {
     Button,
     Menu,
@@ -15,13 +19,17 @@ import {
     Form,
     FormItem,
     Input,
-    Message 
+    Message,
+    Row,
+    Col
 } from 'element-ui'
 Vue.prototype.$message = Message
 Vue.config.productionTip = false
 let arr = [Button, Menu, MenuItem,Submenu, MenuItemGroup, Pagination,Dialog,Input,
     Form,
-    FormItem]
+    FormItem,
+    Row,
+    Col]
 arr.forEach(item => {
     Vue.component(item.name, item)
 })
